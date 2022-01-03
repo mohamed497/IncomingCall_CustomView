@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    tools:context="com.example.callcustomview.ui.activity.HomeActivity">
+
+    <TextView
+        android:id="@+id/customViewLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:padding="16dp"
+        android:text="@string/user_is_calling"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display3"
+        android:textColor="@android:color/black"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.example.callcustomview.ui.customview.incomingcall.IncomingCallView
+        android:id="@+id/callingBtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:callStatus="ringing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <com.example.callcustomview.ui.customview.incomingcall.IncomingCallView
+        android:id="@+id/acceptBtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:callStatus="accept"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/callingBtn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:x_position="0.8"
+        app:y_position="0.75" />
+
+    <com.example.callcustomview.ui.customview.incomingcall.IncomingCallView
+        android:id="@+id/rejectBtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:callStatus="reject"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/callingBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:x_position="0.2"
+        app:y_position="0.75" />
+
+    <com.example.callcustomview.ui.customview.incomingcall.IncomingCallView
+        android:id="@+id/msgBtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:callStatus="msg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/callingBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:x_position="0.48"
+        app:y_position="0.58" />
+
+    <com.example.callcustomview.ui.customview.incomingcall.IncomingCallView
+        android:id="@+id/muteBtn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:callStatus="mute"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/callingBtn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:x_position="0.51"
+        app:y_position="0.93" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
