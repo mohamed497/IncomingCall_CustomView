@@ -8,6 +8,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.callcustomview.utils.debug
 import com.example.callcustomview.utils.toInVisible
 import com.example.callcustomview.utils.toVisible
@@ -27,6 +28,13 @@ class HomeActivity : AppCompatActivity() {
 
         callingBtn.setOnDragListener(dragListener)
 
+        setViewsToInvisible()
+    }
+    private fun setViewsToInvisible(){
+        acceptBtn.toInVisible()
+        rejectBtn.toInVisible()
+        msgBtn.toInVisible()
+        muteBtn.toInVisible()
     }
 
     private val dragListener = View.OnDragListener { view, dragEvent ->
@@ -53,7 +61,7 @@ class HomeActivity : AppCompatActivity() {
                 owner.removeView(v)
                 // //
 //                val destination = view as Button
-                val destination = view as LinearLayout
+                val destination = view as ConstraintLayout
                 destination.addView(v)
                 v.toVisible()
                 true
